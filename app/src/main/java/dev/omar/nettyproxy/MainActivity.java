@@ -15,6 +15,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
 import dev.omar.nettyproxy.databinding.ActivityMainBinding;
 import dev.omar.nettyproxy.proxy.ProxyController;
+import dev.omar.nettyproxy.ui.about.AboutBottomSheetDialog;
 import dev.omar.nettyproxy.utils.Utils;
 
 public class MainActivity extends AppCompatActivity {
@@ -84,6 +85,9 @@ public class MainActivity extends AppCompatActivity {
         switch (item.getItemId()) {
             case R.id.menu_item_run:
                 toggleProxyServiceRunning();
+                break;
+                case R.id.menu_item_info:
+                new AboutBottomSheetDialog().show(getSupportFragmentManager(),"AboutUs");
                 break;
         }
         return super.onOptionsItemSelected(item);

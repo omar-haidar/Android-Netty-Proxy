@@ -1,4 +1,39 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">Netty Proxy</string>
+    
+    <string name="about_title">About Netty Proxy</string>
+    <string name="about_description">
+        <![CDATA[
+        <b>Netty Proxy</b> is a high-performance HTTP/HTTPS proxy server for Android devices.<br/><br/>
+        
+        <b>Developer:</b><br/>
+        • Name: OMAR HAIDAR<br/>
+        • Telegram: <a href="https://t.me/OMAR_HAIDAR_0">@OMAR_HAIDAR_0</a><br/>
+        • GitHub: <a href="https://github.com/omar-haidar/Netty-Proxy">github.com/omar-haidar/Netty-Proxy</a><br/><br/>
+        
+        <b>Features:</b><br/>
+        • HTTP & HTTPS proxy support (CONNECT method)<br/>
+        • Auto-start on device boot<br/>
+        • Foreground service for reliable background operation<br/>
+        • Built with Netty framework for high concurrency<br/>
+        • Lightweight and efficient<br/><br/>
+        
+        <b>How it works:</b><br/>
+        This app turns your Android device into a proxy server, allowing other devices on the same network to browse the internet through your device. Perfect for networks where only one device has internet access.<br/><br/>
+        
+        <b>Technical Details:</b><br/>
+        • Built with: Java, Netty 4.1<br/>
+        • Proxy port: 8080 (configurable)<br/>
+        • Supports: HTTP, HTTPS (via CONNECT)<br/><br/>
+        
+        <b>License:</b><br/>
+        This project is open-source and available under the MIT License.<br/><br/>
+        
+        
+        <i><b>Thank you for using Netty Proxy!</b></i><br/>
+        
+        ]]>
+    </string>
+    
 </resources>
