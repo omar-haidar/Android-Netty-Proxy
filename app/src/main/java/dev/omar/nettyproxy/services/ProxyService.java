@@ -22,12 +22,14 @@ import dev.omar.nettyproxy.proxy.netty.HttpProxyClientHandlerFactory;
 import dev.omar.nettyproxy.proxy.netty.HttpProxyClientHeader;
 import dev.omar.nettyproxy.proxy.netty.HttpProxyServer;
 
+import dev.omar.nettyproxy.utils.NotificationHelper;
+import dev.omar.nettyproxy.utils.Utils;
 import io.netty.channel.ChannelInitializer;
 import io.netty.channel.socket.SocketChannel;
 
 import java.util.concurrent.atomic.AtomicLong;
 
-public class ProxyService extends Service {
+public class ProxyService extends BaseService {
 
     private static final String CHANNEL_ID = "NettyProxyChannel";
     private static final int NOTIFICATION_ID = 1001;
@@ -41,7 +43,7 @@ public class ProxyService extends Service {
     @Override
     public void onCreate() {
         super.onCreate();
-        createNotificationChannel();
+        NotificationHelper.createNotificationChannel(this,CHANNEL_ID,NotificationManager.IMPORTANCE_LOW);
         PowerManager powerManager = (PowerManager) getSystemService(POWER_SERVICE);
         wakeLock =
                 powerManager.newWakeLock(PowerManager.PARTIAL_WAKE_LOCK, "ProxyService::WakeLock");
@@ -103,22 +105,12 @@ public class ProxyService extends Service {
                         .setContentText(contentText)
                         .setSmallIcon(R.drawable.ic_share)
                         .setOngoing(true)
-                        .setContentIntent(PendingIntent.getActivity(this,33,mainActivityIntent,getPendingIntentFlags()))
+                        .setContentIntent(PendingIntent.getActivity(this,33,mainActivityIntent,Utils.getPendingIntentFlags()))
                         .build();
 
         startForeground(NOTIFICATION_ID, notification);
     }
     
-    private int getPendingIntentFlags() {
-    	int flags = PendingIntent.FLAG_UPDATE_CURRENT;
-        if(Build.VERSION.SDK_INT>=Build.VERSION_CODES.S) {
-        	flags |= PendingIntent.FLAG_IMMUTABLE;
-        } else {
-        	flags |= PendingIntent.FLAG_ONE_SHOT;
-        }
-        return flags;
-    }
-
     @Override
     public void onDestroy() {
         stopProxy();
@@ -137,23 +129,5 @@ public class ProxyService extends Service {
         stopForeground(true);
     }
 
-    @Override
-    public IBinder onBind(Intent intent) {
-        return null;
-    }
-
-    private void createNotificationChannel() {
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
-            NotificationChannel channel =
-                    new NotificationChannel(
-                            CHANNEL_ID,
-                            getString(R.string.app_name),
-                            NotificationManager.IMPORTANCE_LOW);
-
-            NotificationManager manager = getSystemService(NotificationManager.class);
-            if (manager != null) {
-                manager.createNotificationChannel(channel);
-            }
-        }
-    }
+    
 }

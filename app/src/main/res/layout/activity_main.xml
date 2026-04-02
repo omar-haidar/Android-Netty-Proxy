@@ -37,8 +37,8 @@
                         android:padding="16dp"
                         android:orientation="vertical">
 
-                        <TextView
-                            android:text="Information"
+                        <com.google.android.material.textview.MaterialTextView
+                            android:text="@string/information"
                             android:textStyle="bold"
                             android:gravity="center"
                             android:textAppearance="@style/TextAppearance.Material3.TitleMedium"
@@ -53,18 +53,18 @@
                             android:layout_marginBottom="8dp"
                             android:orientation="horizontal">
 
-                            <TextView
-                                android:text="Service status : "
+                            <com.google.android.material.textview.MaterialTextView
+                                android:text="@string/service_status"
                                 android:layout_weight="1"
-                                android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                                android:textAppearance="@style/TextAppearance.Material3.BodyMedium"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content" />
 
-                            <TextView
-                                android:text="STOPPED"
+                            <com.google.android.material.textview.MaterialTextView
+                                android:text="@string/stopped"
                                 android:textColor="@color/error"
                                 android:id="@+id/txt_service_status"
-                                android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+                                android:textAppearance="@style/TextAppearance.Material3.TitleMedium"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content" />
                         </LinearLayout>
@@ -75,18 +75,19 @@
                             android:layout_marginBottom="8dp"
                             android:orientation="horizontal">
 
-                            <TextView
-                                android:text="Proxy IP : "
+                            <com.google.android.material.textview.MaterialTextView
+                                android:text="@string/proxy_ip"
                                 android:layout_weight="1"
-                                android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                                android:textAppearance="@style/TextAppearance.Material3.BodyMedium"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content" />
 
-                            <TextView
+                            <com.google.android.material.textview.MaterialTextView
                                 android:id="@+id/txt_proxy_ip"
                                 android:text="..."
-                                android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+                                android:textAppearance="@style/TextAppearance.Material3.TitleMedium"
                                 android:layout_width="wrap_content"
+                                android:textColor="?colorPrimary"
                                 android:layout_height="wrap_content" />
                         </LinearLayout>
 
@@ -96,17 +97,18 @@
                             android:layout_marginBottom="8dp"
                             android:orientation="horizontal">
 
-                            <TextView
-                                android:text="Proxy PORT : "
+                            <com.google.android.material.textview.MaterialTextView
+                                android:text="@string/proxy_port"
                                 android:layout_weight="1"
-                                android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                                android:textAppearance="@style/TextAppearance.Material3.BodyMedium"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content" />
 
-                            <TextView
+                            <com.google.android.material.textview.MaterialTextView
                                 android:id="@+id/txt_proxy_port"
                                 android:text="..."
-                                android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+                                android:textAppearance="@style/TextAppearance.Material3.TitleMedium"
+                                android:textColor="?colorPrimary"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content" />
                         </LinearLayout>
@@ -116,8 +118,8 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:paddingVertical="8dp"
-                            android:text="Auto start"
-                            android:textAppearance="@style/TextAppearance.AppCompat.Body2" />
+                            android:text="@string/auto_start"
+                            android:textAppearance="@style/TextAppearance.Material3.TitleMedium" />
 
                     </LinearLayout>
                 </com.google.android.material.card.MaterialCardView>

@@ -39,6 +39,6 @@ This app is perfect for networks where:
 
 ### From Source
 ```bash
-git clone https://github.com/omar-haidar/Netty-Proxy.git
+git clone https://github.com/omar-haidar/Android-Netty-Proxy.git
 cd Netty-Proxy
 # Open in Android Studio and build

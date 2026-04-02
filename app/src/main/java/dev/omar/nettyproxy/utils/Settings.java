@@ -20,6 +20,7 @@ public class Settings {
     public void setStartWithBoot(boolean flag) {
     	sp.edit().putBoolean("boot_startup",flag).apply();
     }
-
+    
+    
 
 }

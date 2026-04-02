@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">Netty Proxy</string>
-    
+    <string name="information">Information</string>
     <string name="about_title">About Netty Proxy</string>
     <string name="about_description">
         <![CDATA[
@@ -10,7 +10,7 @@
         <b>Developer:</b><br/>
         • Name: OMAR HAIDAR<br/>
         • Telegram: <a href="https://t.me/OMAR_HAIDAR_0">@OMAR_HAIDAR_0</a><br/>
-        • GitHub: <a href="https://github.com/omar-haidar/Netty-Proxy">github.com/omar-haidar/Netty-Proxy</a><br/><br/>
+        • GitHub: <a href="https://github.com/omar-haidar/Android-Netty-Proxy">github.com/omar-haidar/Android-Netty-Proxy</a><br/><br/>
         
         <b>Features:</b><br/>
         • HTTP & HTTPS proxy support (CONNECT method)<br/>
@@ -36,4 +36,10 @@
         ]]>
     </string>
     
+    <string name="hide">Hide</string>
+    <string name="stopped">STOPPED</string>
+    <string name="auto_start">Auto start</string>
+    <string name="proxy_port">Proxy PORT : </string>
+    <string name="proxy_ip">Proxy IP : </string>
+    <string name="service_status">Service status : </string>
 </resources>

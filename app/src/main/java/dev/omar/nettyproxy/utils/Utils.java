@@ -2,6 +2,8 @@ package dev.omar.nettyproxy.utils;
 
 import android.Manifest;
 import android.app.Activity;
+import android.app.PendingIntent;
+import android.os.Build;
 import androidx.core.app.ActivityCompat;
 import com.google.android.material.dialog.MaterialAlertDialogBuilder;
 import dev.omar.nettyproxy.MainActivity;
@@ -48,5 +50,15 @@ public final class Utils {
         d.setNegativeButton("Exit", (_d, _i) -> activity.finishAffinity());
         d.setCancelable(false);
         d.show();
+    }
+
+    public static int getPendingIntentFlags() {
+        int flags = PendingIntent.FLAG_UPDATE_CURRENT;
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S) {
+            flags |= PendingIntent.FLAG_IMMUTABLE;
+        } else {
+            flags |= PendingIntent.FLAG_ONE_SHOT;
+        }
+        return flags;
     }
 }
